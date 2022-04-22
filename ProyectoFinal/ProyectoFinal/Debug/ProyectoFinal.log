@@ -1,16 +1,16 @@
 ﻿  ProyectoFinal.cpp
 C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(198,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(233,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(233,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(234,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(234,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(235,21): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(235,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float

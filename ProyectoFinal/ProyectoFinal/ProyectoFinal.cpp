@@ -25,8 +25,8 @@
 #include "Model.h"
 
 // Function prototypes
-void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode);
-void MouseCallback(GLFWwindow* window, double xPos, double yPos);
+void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode);
+void MouseCallback(GLFWwindow *window, double xPos, double yPos);
 void DoMovement();
 
 // Window dimensions
@@ -162,7 +162,7 @@ int main()
 
 	Shader lightingShader("Shaders/lighting.vs", "Shaders/lighting.frag");
 	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag");
-
+	
 	Model Piso((char*)"Models/Esfera/Piso.obj");
 	Model Esfera((char*)"Models/Esfera/Esfera.obj");
 	Model Box((char*)"Models/Box/Box.obj");
@@ -186,7 +186,7 @@ int main()
 	// Set texture units
 	lightingShader.Use();
 	glUniform1i(glGetUniformLocation(lightingShader.Program, "material.diffuse"), 0);
-	glUniform1i(glGetUniformLocation(lightingShader.Program, "material.specular"), 1);
+	glUniform1i(glGetUniformLocation(lightingShader.Program, "material.specular"),1);
 
 	glm::mat4 projection = glm::perspective(camera.GetZoom(), (GLfloat)SCREEN_WIDTH / (GLfloat)SCREEN_HEIGHT, 0.1f, 100.0f);
 
@@ -206,14 +206,14 @@ int main()
 		// Clear the colorbuffer
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+	   
 		// OpenGL options
 		glEnable(GL_DEPTH_TEST);
 
-
-
+		
+		
 		//Load Model
-
+	
 
 		// Use cooresponding shader when setting uniforms/drawing objects
 		lightingShader.Use();
@@ -223,25 +223,25 @@ int main()
 
 		// Directional light
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"), 0.5f, 0.5f, 0.5f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"),0.5f,0.5f,0.5f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.5f, 0.5f, 0.5f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"), 1.0f, 1.0f, 1.0f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"),1.0f, 1.0f, 1.0f);
 
 
 		//// Point light 1
-		glm::vec3 lightColor;
-		lightColor.x = abs(sin(glfwGetTime() * Light1.x));
-		lightColor.y = abs(sin(glfwGetTime() * Light1.y));
-		lightColor.z = sin(glfwGetTime() * Light1.z);
+	    glm::vec3 lightColor;
+		lightColor.x= abs(sin(glfwGetTime() *Light1.x));
+		lightColor.y= abs(sin(glfwGetTime() *Light1.y));
+		lightColor.z= sin(glfwGetTime() *Light1.z);
 
-
+		
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].position"), pointLightPositions[0].x, pointLightPositions[0].y, pointLightPositions[0].z);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].ambient"), lightColor.x, lightColor.y, lightColor.z);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].diffuse"), lightColor.x, lightColor.y, lightColor.z);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].ambient"), lightColor.x,lightColor.y, lightColor.z);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].diffuse"), lightColor.x,lightColor.y,lightColor.z);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "pointLights[0].specular"), 1.0f, 1.0f, 0.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].constant"), 1.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].linear"), 0.7f);
-		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].quadratic"), 1.8f);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[0].quadratic"),1.8f);
 
 
 
@@ -286,11 +286,11 @@ int main()
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[3].quadratic"), 1.8f);
 
 		// SpotLight
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.position"), 0.0f + posicionx, 0.0f + posiciony, -2.0f + posicionz);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.direction"), 0.0f + direccionx, 0.0f + direcciony, 0.0f + direccionz);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.position"), 0.0f+posicionx,0.0f+posiciony,-2.0f+posicionz);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.direction"), 0.0f+direccionx, 0.0f+direcciony, 0.0f+direccionz);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.ambient"), 1.0f, 1.0f, 1.0f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.diffuse"), 1.0f, 1.0f, 1.0f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.specular"), 1.0f, 1.0f, 1.0f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.specular"),1.0f, 1.0f, 1.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.constant"), 1.0f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.linear"), 0.35f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.quadratic"), 0.44f);
@@ -316,10 +316,10 @@ int main()
 
 		glm::mat4 model(1);
 
-
+	
 
 		//Carga de modelo 
-		view = camera.GetViewMatrix();
+        view = camera.GetViewMatrix();	
 		model = glm::mat4(1);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTrans"), 0);
@@ -327,9 +327,9 @@ int main()
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTrans"), 0);
-		P2.Draw(lightingShader);
+	    P2.Draw(lightingShader);
 
-
+	 
 
 		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -341,7 +341,7 @@ int main()
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 1.0);
 
 		glBindVertexArray(0);
-
+	
 
 		// Also draw the lamp object, again binding the appropriate shader
 		lampShader.Use();
@@ -493,11 +493,11 @@ void DoMovement()
 		posicionz -= 0.01f;
 	}
 
-
+	
 }
 
 // Is called whenever a key is pressed/released via GLFW
-void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode)
+void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode)
 {
 	if (GLFW_KEY_ESCAPE == key && GLFW_PRESS == action)
 	{
@@ -536,7 +536,7 @@ void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mode
 	}
 }
 
-void MouseCallback(GLFWwindow* window, double xPos, double yPos)
+void MouseCallback(GLFWwindow *window, double xPos, double yPos)
 {
 	if (firstMouse)
 	{

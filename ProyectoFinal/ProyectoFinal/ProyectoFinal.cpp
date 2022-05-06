@@ -170,6 +170,7 @@ int main()
 	Model P2((char*)"Models/PC/P2.obj");
 	Model maquina1((char*)"Models/maquina1/maquina.obj");
 	Model maquina2((char*)"Models/Maquina2/Maquina2.obj");
+	Model maquina3((char*)"Models/Maquina3/Maquina3.obj");
 	Model Casa((char*)"Models/Casa/Casa.obj");
 	Model Mesa((char*)"Models/Mesa/mesa.obj");
 	Model Celda((char*)"Models/celda/celda.obj");
@@ -364,6 +365,13 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTrans"), 0);
 		Celda.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-6.0f, 0.4, -5.0));
+		model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTrans"), 0);
+		maquina3.Draw(lightingShader);
 
 
 	 

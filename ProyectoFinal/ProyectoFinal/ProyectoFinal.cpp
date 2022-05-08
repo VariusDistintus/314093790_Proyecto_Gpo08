@@ -171,6 +171,7 @@ int main()
 	Model maquina1((char*)"Models/maquina1/maquina.obj");
 	Model maquina2((char*)"Models/Maquina2/Maquina2.obj");
 	Model maquina3((char*)"Models/Maquina3/Maquina3.obj");
+	Model maquina4((char*)"Models/Maquina4/Maquina4.obj");
 	Model Casa((char*)"Models/Casa/Casa.obj");
 	Model Mesa((char*)"Models/Mesa/mesa.obj");
 	Model Celda((char*)"Models/celda/celda.obj");
@@ -334,7 +335,7 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTrans"), 0);
 		Casa.Draw(lightingShader);
-		model = glm::translate(model, glm::vec3(7.0f, 0.5f, -2.0f));
+		model = glm::translate(model, glm::vec3(7.0f, 0.5f, -3.0f));
 		model = glm::scale(model, glm::vec3(1.6f, 1.6f, 1.6f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTrans"), 0);
@@ -372,6 +373,15 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTrans"), 0);
 		maquina3.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(7.5f, 0.3f, 1.0f));
+		model = glm::scale(model, glm::vec3(1.2f, 1.2f, 1.2f));
+		model = glm::rotate(model, glm::radians(-80.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "activaTrans"), 0);
+		maquina4.Draw(lightingShader);
+
 
 
 	 

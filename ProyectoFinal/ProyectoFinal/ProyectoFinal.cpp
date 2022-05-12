@@ -131,6 +131,9 @@ typedef struct _frame
 
 }FRAME;
 
+
+int i_max_steps2 = 190;
+int i_curr_steps2 = 0;
 typedef struct _frame2
 {
 	//Variables para GUARDAR Key Frames
@@ -371,8 +374,6 @@ int main()
 	
 	Model Piso((char*)"Models/Esfera/Piso.obj");
 	Model Esfera((char*)"Models/Esfera/Esfera.obj");
-	Model Box((char*)"Models/Box/Box.obj");
-	Model P1((char*)"Models/PC/P1.obj");
 	Model P2((char*)"Models/PC/P2.obj");
 	Model maquina1((char*)"Models/maquina1/maquina.obj");
 	Model maquina2((char*)"Models/Maquina2/Maquina2.obj");
@@ -1166,7 +1167,7 @@ void animacion2()
 
 	if (play2)
 	{
-		if (i_curr_steps >= i_max_steps) //end of animation between frames?
+		if (i_curr_steps2 >= i_max_steps2) //end of animation between frames?
 		{
 			playIndex2++;
 			if (playIndex2 > FrameIndex2 - 2)	//end of total animation?
@@ -1177,7 +1178,7 @@ void animacion2()
 			}
 			else //Next frame interpolations
 			{
-				i_curr_steps = 0; //Reset counter
+				i_curr_steps2 = 0; //Reset counter
 								  //Interpolation
 				interpolation2();
 			}
@@ -1197,7 +1198,7 @@ void animacion2()
 
 			rot2BraDer += KeyFrame2[playIndex2].rot2Inc5;
 			rot2BraIzq += KeyFrame2[playIndex2].rot2Inc6;
-			i_curr_steps++;
+			i_curr_steps2++;
 		}
 
 	}
@@ -1236,35 +1237,7 @@ void DoMovement()
 		camera.ProcessKeyboard(RIGHT, deltaTime);
 
 
-	}
-
-	if (keys[GLFW_KEY_T])
-	{
-		pointLightPositions[0].x += 0.01f;
-	}
-	if (keys[GLFW_KEY_G])
-	{
-		pointLightPositions[0].x -= 0.01f;
-	}
-
-	if (keys[GLFW_KEY_Y])
-	{
-		pointLightPositions[0].y += 0.01f;
-	}
-
-	if (keys[GLFW_KEY_H])
-	{
-		pointLightPositions[0].y -= 0.01f;
-	}
-	if (keys[GLFW_KEY_U])
-	{
-		pointLightPositions[0].z -= 0.1f;
-	}
-	if (keys[GLFW_KEY_J])
-	{
-		pointLightPositions[0].z += 0.01f;
-	}
-	
+	}	
 
 	if (animpuerta == true)
 	{
@@ -1340,35 +1313,7 @@ void DoMovement()
 			animEsfera3 = false;
 
 		}
-	}
-
-	if (keys[GLFW_KEY_2])
-	{
-		if (rotRodIzq<80.0f)
-			rotRodIzq += 1.0f;
-			
-	}
-
-	if (keys[GLFW_KEY_3])
-	{
-		if (rotRodIzq>-45)
-			rotRodIzq -= 1.0f;
-		
-	}
-	if (keys[GLFW_KEY_4])
-	{
-		if (rotIzq2 < 80.0f)
-			rotIzq2 += 1.0f;
-
-	}
-
-	if (keys[GLFW_KEY_5])
-	{
-		if (rotIzq2 > -45)
-			rotIzq2 -= 1.0f;
-
-	}
-	
+	}	
 	
 }
 
@@ -1389,25 +1334,6 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 		else if (action == GLFW_RELEASE)
 		{
 			keys[key] = false;
-		}
-	}
-
-	if (keys[GLFW_KEY_SPACE])
-	{
-		active = !active;
-		if (active)
-		{
-			Light1 = glm::vec3(1.0f, 1.0f, 0.0f);
-			Light2 = glm::vec3(1.0f, 0.0f, 1.0f);
-			Light3 = glm::vec3(0.184f, 0.956f, 0.847f);
-			Light4 = glm::vec3(1.0f, 0.0f, 0.0f);
-		}
-		else
-		{
-			Light1 = glm::vec3(0);//Cuado es solo un valor en los 3 vectores pueden dejar solo una componente
-			Light2 = glm::vec3(0);
-			Light3 = glm::vec3(0);
-			Light4 = glm::vec3(0);
 		}
 	}
 
@@ -1465,7 +1391,7 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 
 			play2 = true;
 			playIndex2 = 0;
-			i_curr_steps = 0;
+			i_curr_steps2 = 0;
 		}
 		else
 		{

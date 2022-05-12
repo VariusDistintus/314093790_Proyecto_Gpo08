@@ -1,76 +1,75 @@
 ﻿  ProyectoFinal.cpp
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(463,26): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(567,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(571,25): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(608,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(464,26): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(491,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(492,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(507,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(508,28): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(714,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(718,25): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(755,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(609,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(756,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(610,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(757,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(625,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(772,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(626,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(773,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(627,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(774,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(639,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(786,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(640,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(787,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(641,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(788,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(652,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(799,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(653,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(800,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(654,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(801,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(1323,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(1324,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(1328,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(1329,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(1331,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(1332,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-soil2-debug.lib(etc1_utils.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(etc1_utils.obj)' o en 'C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-soil2-debug.lib(image_DXT.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_DXT.obj)' o en 'C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-soil2-debug.lib(image_helper.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_helper.obj)' o en 'C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-soil2-debug.lib(SOIL2.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(SOIL2.obj)' o en 'C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(1483,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(1484,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(1488,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(1489,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(1491,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\ProyectoFinal\ProyectoFinal.cpp(1492,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
   ProyectoFinal.vcxproj -> C:\Users\lunab\Documents\Repositorio\314093790_Proyecto_Gpo08\ProyectoFinal\Debug\ProyectoFinal.exe

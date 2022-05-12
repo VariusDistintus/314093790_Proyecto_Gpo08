@@ -38,15 +38,15 @@ const GLuint WIDTH = 800, HEIGHT = 600;
 int SCREEN_WIDTH, SCREEN_HEIGHT;
 
 // Camera
-Camera  camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera  camera(glm::vec3(0.0f, 6.0f, 40.0f));
 GLfloat lastX = WIDTH / 2.0;
 GLfloat lastY = HEIGHT / 2.0;
 bool keys[1024];
 bool firstMouse = true;
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
-glm::vec3 PosIni(4.5f, 0.66f, -3.0f);
-glm::vec3 PosIni2(0.0f, 3.0f, 0.0f);
+glm::vec3 PosIni(4.5f, 0.66f, -3.5f);
+glm::vec3 PosIni2(-3.0f, 0.3f, 1.5f);
 bool active;
 float rot = 0.0f;
 float range = 0.0f;
@@ -367,6 +367,7 @@ int main()
 
 	Shader lightingShader("Shaders/lighting.vs", "Shaders/lighting.frag");
 	Shader lampShader("Shaders/lamp.vs", "Shaders/lamp.frag");
+	Shader SkyBoxshader("Shaders/SkyBox.vs", "Shaders/SkyBox.frag");
 	
 	Model Piso((char*)"Models/Esfera/Piso.obj");
 	Model Esfera((char*)"Models/Esfera/Esfera.obj");
@@ -476,18 +477,47 @@ int main()
 	KeyFrame2[0].rot2Izq2 = 0;
 	KeyFrame2[0].rot2RodDer = 0;
 	KeyFrame2[0].rot2Der2 = 0;
-	KeyFrame2[0].rot2BraDer = 0;
-	KeyFrame2[0].rot2BraIzq = 0;
+
 
 	KeyFrame2[1].posX2 = posX2;
 	KeyFrame2[1].posY2 = posY2;
-	KeyFrame2[1].posZ2 = posZ2 + 1;
-	KeyFrame2[1].rot2RodIzq = -50;
-	KeyFrame2[1].rot2Izq2 = -10;
-	KeyFrame2[1].rot2RodDer = 50;
-	KeyFrame2[1].rot2Der2 = 10;
-	KeyFrame2[1].rot2BraDer = 50;
-	KeyFrame2[1].rot2BraIzq = -50;
+	KeyFrame2[1].posZ2 = posZ2;
+	KeyFrame2[1].rot2RodIzq = -10;
+	KeyFrame2[1].rot2Izq2 = 0;
+	KeyFrame2[1].rot2RodDer = -10;
+	KeyFrame2[1].rot2Der2 = 0;
+
+	KeyFrame2[2].posX2 = posX2;
+	KeyFrame2[2].posY2 = posY2+0.5;
+	KeyFrame2[2].posZ2 = posZ2+0.5;
+	KeyFrame2[2].rot2RodIzq = 20;
+	KeyFrame2[2].rot2Izq2 = 0;
+	KeyFrame2[2].rot2RodDer = -20;
+	KeyFrame2[2].rot2Der2 = 0;
+
+	KeyFrame2[3].posX2 = posX2;
+	KeyFrame2[3].posY2 = posY2+1;
+	KeyFrame2[3].posZ2 = posZ2+1;
+	KeyFrame2[3].rot2RodIzq = 40;
+	KeyFrame2[3].rot2Izq2 = 15;
+	KeyFrame2[3].rot2RodDer = -40;
+	KeyFrame2[3].rot2Der2 = -15;
+
+	KeyFrame2[4].posX2 = posX2;
+	KeyFrame2[4].posY2 = posY2+0.5;
+	KeyFrame2[4].posZ2 = posZ2+1.5;
+	KeyFrame2[4].rot2RodIzq = -20;
+	KeyFrame2[4].rot2Izq2 = 0;
+	KeyFrame2[4].rot2RodDer = 20;
+	KeyFrame2[4].rot2Der2 = 0;
+
+	KeyFrame2[5].posX2 = posX2;
+	KeyFrame2[5].posY2 = posY2;
+	KeyFrame2[5].posZ2 = posZ2+2;
+	KeyFrame2[5].rot2RodIzq = 0;
+	KeyFrame2[5].rot2Izq2 = 0;
+	KeyFrame2[5].rot2RodDer = 0;
+	KeyFrame2[5].rot2Der2 = 0;
 
 
 
@@ -537,25 +567,142 @@ int main()
 		-0.5f,  0.5f, -0.5f,    0.0f,  1.0f,  0.0f,     0.0f,  1.0f
 	};
 
+	GLfloat skyboxVertices[] = {
+		// Positions
+		-1.0f,  1.0f, -1.0f,
+		-1.0f, -1.0f, -1.0f,
+		1.0f, -1.0f, -1.0f,
+		1.0f, -1.0f, -1.0f,
+		1.0f,  1.0f, -1.0f,
+		-1.0f,  1.0f, -1.0f,
+
+		-1.0f, -1.0f,  1.0f,
+		-1.0f, -1.0f, -1.0f,
+		-1.0f,  1.0f, -1.0f,
+		-1.0f,  1.0f, -1.0f,
+		-1.0f,  1.0f,  1.0f,
+		-1.0f, -1.0f,  1.0f,
+
+		1.0f, -1.0f, -1.0f,
+		1.0f, -1.0f,  1.0f,
+		1.0f,  1.0f,  1.0f,
+		1.0f,  1.0f,  1.0f,
+		1.0f,  1.0f, -1.0f,
+		1.0f, -1.0f, -1.0f,
+
+		-1.0f, -1.0f,  1.0f,
+		-1.0f,  1.0f,  1.0f,
+		1.0f,  1.0f,  1.0f,
+		1.0f,  1.0f,  1.0f,
+		1.0f, -1.0f,  1.0f,
+		-1.0f, -1.0f,  1.0f,
+
+		-1.0f,  1.0f, -1.0f,
+		1.0f,  1.0f, -1.0f,
+		1.0f,  1.0f,  1.0f,
+		1.0f,  1.0f,  1.0f,
+		-1.0f,  1.0f,  1.0f,
+		-1.0f,  1.0f, -1.0f,
+
+		-1.0f, -1.0f, -1.0f,
+		-1.0f, -1.0f,  1.0f,
+		1.0f, -1.0f, -1.0f,
+		1.0f, -1.0f, -1.0f,
+		-1.0f, -1.0f,  1.0f,
+		1.0f, -1.0f,  1.0f
+	};
+
+
+	GLuint indices[] =
+	{  // Note that we start from 0!
+		0,1,2,3,
+		4,5,6,7,
+		8,9,10,11,
+		12,13,14,15,
+		16,17,18,19,
+		20,21,22,23,
+		24,25,26,27,
+		28,29,30,31,
+		32,33,34,35
+	};
+
+	// Positions all containers
+	glm::vec3 cubePositions[] = {
+		glm::vec3(0.0f,  0.0f,  0.0f),
+		glm::vec3(2.0f,  5.0f, -15.0f),
+		glm::vec3(-1.5f, -2.2f, -2.5f),
+		glm::vec3(-3.8f, -2.0f, -12.3f),
+		glm::vec3(2.4f, -0.4f, -3.5f),
+		glm::vec3(-1.7f,  3.0f, -7.5f),
+		glm::vec3(1.3f, -2.0f, -2.5f),
+		glm::vec3(1.5f,  2.0f, -2.5f),
+		glm::vec3(1.5f,  0.2f, -1.5f),
+		glm::vec3(-1.3f,  1.0f, -1.5f)
+	};
+
+
 
 	// First, set the container's VAO (and VBO)
-	GLuint VBO, VAO;
+	GLuint VBO, VAO, EBO;
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
+	glGenBuffers(1, &EBO);
+
 	glBindVertexArray(VAO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
 	// Position attribute
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)0);
 	glEnableVertexAttribArray(0);
-	// normal attribute
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+	// Normals attribute
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
 	glEnableVertexAttribArray(1);
+	// Texture Coordinate attribute
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(6 * sizeof(GLfloat)));
+	glEnableVertexAttribArray(2);
+	glBindVertexArray(0);
+
+	// Then, we set the light's VAO (VBO stays the same. After all, the vertices are the same for the light object (also a 3D cube))
+	GLuint lightVAO;
+	glGenVertexArrays(1, &lightVAO);
+	glBindVertexArray(lightVAO);
+	// We only need to bind to the VBO (to link it with glVertexAttribPointer), no need to fill it; the VBO's data already contains all we need.
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	// Set the vertex attributes (only position data for the lamp))
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)0); // Note that we skip over the other data in our buffer object (we don't need the normals/textures, only positions).
+	glEnableVertexAttribArray(0);
+	glBindVertexArray(0);
 
 	// Set texture units
 	lightingShader.Use();
 	glUniform1i(glGetUniformLocation(lightingShader.Program, "material.diffuse"), 0);
 	glUniform1i(glGetUniformLocation(lightingShader.Program, "material.specular"),1);
+
+
+	//SkyBox
+	GLuint skyboxVBO, skyboxVAO;
+	glGenVertexArrays(1, &skyboxVAO);
+	glGenBuffers(1, &skyboxVBO);
+	glBindVertexArray(skyboxVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
+
+	// Load textures
+	vector<const GLchar*> faces;
+	faces.push_back("SkyBox/right.tga");
+	faces.push_back("SkyBox/left.tga");
+	faces.push_back("SkyBox/top.tga");
+	faces.push_back("SkyBox/bottom.tga");
+	faces.push_back("SkyBox/back.tga");
+	faces.push_back("SkyBox/front.tga");
+
+	GLuint cubemapTexture = TextureLoading::LoadCubemap(faces);
 
 	glm::mat4 projection = glm::perspective(camera.GetZoom(), (GLfloat)SCREEN_WIDTH / (GLfloat)SCREEN_HEIGHT, 0.1f, 100.0f);
 
@@ -924,21 +1071,34 @@ int main()
 		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 		model = glm::mat4(1);
 		model = glm::translate(model, lightPos);
-		model = glm::scale(model, glm::vec3(0.2f)); // Make it a smaller cube
+		//model = glm::scale(model, glm::vec3(0.2f)); // Make it a smaller cube
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		// Draw the light object (using light's vertex attributes)
-		//for (GLuint i = 0; i < 4; i++)
-		//{
-		//	model = glm::mat4(1);
-		//	model = glm::translate(model, pointLightPositions[i]);
-		//	model = glm::scale(model, glm::vec3(0.2f)); // Make it a smaller cube
-		//	glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//	glBindVertexArray(VAO);
-		//	glDrawArrays(GL_TRIANGLES, 0, 36);
-		//}
+		glBindVertexArray(lightVAO);
+		for (GLuint i = 0; i < 4; i++)
+		{
+			model = glm::mat4(1);
+			model = glm::translate(model, pointLightPositions[i]);
+			model = glm::scale(model, glm::vec3(0.2f)); // Make it a smaller cube
+			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+			glDrawArrays(GL_TRIANGLES, 0, 36);
+		}
 		glBindVertexArray(0);
 
+		// Draw skybox as last
+		glDepthFunc(GL_LEQUAL);  // Change depth function so depth test passes when values are equal to depth buffer's content
+		SkyBoxshader.Use();
+		view = glm::mat4(glm::mat3(camera.GetViewMatrix()));	// Remove any translation component of the view matrix
+		glUniformMatrix4fv(glGetUniformLocation(SkyBoxshader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
+		glUniformMatrix4fv(glGetUniformLocation(SkyBoxshader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
+		// skybox cube
+		glBindVertexArray(skyboxVAO);
+		glActiveTexture(GL_TEXTURE1);
+		glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		glBindVertexArray(0);
+		glDepthFunc(GL_LESS); // Set depth function back to default
 
 		// Swap the screen buffers
 		glfwSwapBuffers(window);
@@ -1251,7 +1411,7 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 		}
 	}
 
-	if (keys[GLFW_KEY_9])
+	if (keys[GLFW_KEY_1])
 	{
 		if (controladorpuerta == false)
 			animpuerta = true;
@@ -1259,14 +1419,14 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 			animpuerta2 = true;
 	}
 
-	if (keys[GLFW_KEY_P])
+	if (keys[GLFW_KEY_3])
 	{
 		movimientoEsfera = 0.0f;
 		animEsfera = true;
 
 	}
 
-	if (keys[GLFW_KEY_1])
+	if (keys[GLFW_KEY_2])
 	{
 		if (controladorlibrero == false) 
 			animlibrero = true;
@@ -1274,7 +1434,7 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 			animlibrero2 = true;
 	}
 
-	if (keys[GLFW_KEY_L])
+	if (keys[GLFW_KEY_4])
 	{
 		if (play == false)
 		{
@@ -1294,7 +1454,7 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 
 	}
 
-	if (keys[GLFW_KEY_K])
+	if (keys[GLFW_KEY_5])
 	{
 		if (play2 == false)
 		{
